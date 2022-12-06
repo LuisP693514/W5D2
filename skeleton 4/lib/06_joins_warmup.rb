@@ -138,6 +138,12 @@ def alien_cast
     ON
       actor_id = actor_list.id
     WHERE
-      movie_id = 35;
+      movie_id IN (
+        SELECT
+          id
+        FROM
+          movies
+         WHERE
+          title = 'Alien');
   SQL
 end
